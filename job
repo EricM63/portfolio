@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Morales - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #007acc;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            margin-top: 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 600;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin-top: 1rem;
+            background-color: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .btn:hover {
+            background-color: #005f99;
+        }
+        .project {
+            margin-bottom: 2rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Eric Morales</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Eric Morales, a passionate mechanical engineering student at the University of the Incarnate Word, graduating in December 2025. With a strong foundation in engineering tools like AutoCAD, Fusion 360, and MATLAB, I blend my technical skills with programming knowledge in Python, C++, and more. My goal is to innovate at the intersection of design, programming, and sustainability.</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project">
+            <h3>Water for Headwaters</h3>
+            <p>Designed and built an off-grid, solar-powered watering station for the Headwaters Sanctuary in San Antonio, supporting local wildlife with a continuous water loop. Used Fusion 360 for design and electrical circuits for implementation.</p>
+        </div>
+        <div class="project">
+            <h3>Ring Doorbell System</h3>
+            <p>Developed a UI in Python integrated with real-time data using Raspberry Pi. Built a user-friendly program for a web-based interface.</p>
+        </div>
+        <div class="project">
+            <h3>Amazon Clone Website</h3>
+            <p>Created a replica UI of Amazon’s store using ReactJS, HTML, and Python. Implemented industry-standard practices effectively.</p>
+        </div>
+        <div class="project">
+            <h3>Tic-Tac-Toe Game</h3>
+            <p>Designed a game using ReactJS and Python to strengthen foundational coding skills.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Interested in collaborating or hiring me? Get in touch!</p>
+        <a class="btn" href="mailto:eric.mrls20@gmail.com">Email Me</a>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/eric-morales-eng" target="_blank">linkedin.com/in/eric-morales-eng</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Eric Morales. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
