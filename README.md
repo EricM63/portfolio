@@ -7,7 +7,6 @@ https://ericm63.github.io/portfolio/
 ## About Me
 Graduate Engineer | Technical Problem Solving
 I am an engineer with experience in MATLAB, Python, and engineering analysis, focused on turning complex technical problems into clear, repeatable solutions. My work includes numerical analysis, mechanical system modeling, and data-driven validation of engineering designs.
-## Technologies
 ## Skills
 Programming & Analysis
 - MATLAB (numerical methods, plotting, symbolic math)
