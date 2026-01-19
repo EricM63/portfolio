@@ -1,131 +1,193 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Morales - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #007acc;
-            color: white;
-            padding: 1rem 2rem;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-        nav {
-            margin-top: 1rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: 600;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 2rem;
-            text-align: center;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            margin-top: 1rem;
-            background-color: #007acc;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-        .btn:hover {
-            background-color: #005f99;
-        }
-        .project {
-            margin-bottom: 2rem;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eric Morales – Portfolio</title>
+
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Body & General */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header, section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1, h2, h3 {
+      color: #1e90ff;
+    }
+
+    /* Gradient Hero Section */
+    header {
+      background: linear-gradient(135deg, #1e90ff, #00bfff);
+      color: white;
+      padding: 60px 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* Button Styling */
+    a.button {
+      display: inline-block;
+      background-color: #1e90ff;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #0d6efd;
+      transform: scale(1.05);
+    }
+
+    /* Project Cards */
+    .project {
+      background-color: #ffffff;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 5px;
+      margin: 10px 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      body {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+      header, section {
+        padding: 30px 10px;
+      }
+      a.button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
+    nav {
+      text-align:center;
+      padding:15px;
+      background:#1e90ff;
+    }
+    nav a {
+      color:white;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Eric Morales</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Eric Morales, a passionate mechanical engineering student at the University of the Incarnate Word, graduating in December 2025. With a strong foundation in engineering tools like AutoCAD, Fusion 360, and MATLAB, I blend my technical skills with programming knowledge in Python, C++, and more. My goal is to innovate at the intersection of design, programming, and sustainability.</p>
-    </section>
+  <!-- Navigation -->
+  <nav>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <h3>Water for Headwaters</h3>
-            <p>Designed and built an off-grid, solar-powered watering station for the Headwaters Sanctuary in San Antonio, supporting local wildlife with a continuous water loop. Used Fusion 360 for design and electrical circuits for implementation.</p>
-        </div>
-        <div class="project">
-            <h3>Ring Doorbell System</h3>
-            <p>Developed a UI in Python integrated with real-time data using Raspberry Pi. Built a user-friendly program for a web-based interface.</p>
-        </div>
-        <div class="project">
-            <h3>Amazon Clone Website</h3>
-            <p>Created a replica UI of Amazon’s store using ReactJS, HTML, and Python. Implemented industry-standard practices effectively.</p>
-        </div>
-        <div class="project">
-            <h3>Tic-Tac-Toe Game</h3>
-            <p>Designed a game using ReactJS and Python to strengthen foundational coding skills.</p>
-        </div>
-    </section>
+  <!-- Hero / About Section -->
+  <header>
+    <h1>Eric Morales</h1>
+    <p><strong>Engineering Student | MATLAB & Python | Technical Problem Solving</strong></p>
+    <p>I am an engineer with experience in MATLAB, Python, and engineering analysis, focused on turning complex technical problems into clear, repeatable solutions. My work includes numerical analysis, mechanical system modeling, and data-driven validation of engineering designs.</p>
+    <p><em>Seeking entry-level engineering or technical roles.</em></p>
+  </header>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Interested in collaborating or hiring me? Get in touch!</p>
-        <a class="btn" href="mailto:eric.mrls20@gmail.com">Email Me</a>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/eric-morales-eng" target="_blank">linkedin.com/in/eric-morales-eng</a></p>
-    </section>
-  <!-- Resume Button -->
-  <a href="Eric_Morales_Resume.pdf" download 
-     style="
-       display:inline-block;
-       background-color:#1e90ff;
-       color:white;
-       padding:15px 30px;
-       border-radius:5px;
-       text-decoration:none;
-       font-weight:bold;
-       margin-top:15px;
-       font-size:16px;
-     ">
-    Download My Resume
-  </a>
-</section>
-    <footer>
-        <p>&copy; 2025 Eric Morales. All Rights Reserved.</p>
-    </footer>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <p><strong>Programming & Analysis:</strong> MATLAB (numerical methods, plotting, symbolic math), Python (data analysis, scripting), SQL (basic querying)</p>
+    <p><strong>Engineering Tools:</strong> AutoCAD, Fusion 360, Excel (engineering plots & analysis)</p>
+    <p><strong>Web:</strong> HTML, CSS</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Beam Stress Analysis (MATLAB)</h3>
+      <!-- Optional: Add image -->
+      <!-- <img src="beam_plot.png" alt="Beam Stress Plot"> -->
+      <p>Analyzed bending stress in hollow circular beams using mechanics of materials formulas and MATLAB. Generated stress distributions and validated results analytically, providing clear plots for design verification.</p>
+      <p><strong>Tools:</strong> MATLAB</p>
+      <p><strong>Focus:</strong> Mechanical stress analysis, numerical validation</p>
+    </div>
+
+    <div class="project">
+      <h3>Cam and Follower Mechanism Design</h3>
+      <p>Designed and analyzed a cam and oscillating follower mechanism. Modeled motion constraints and verified displacement behavior through geometric and kinematic analysis to ensure accurate mechanical performance.</p>
+      <p><strong>Tools:</strong> Fusion 360, Engineering Analysis</p>
+      <p><strong>Focus:</strong> Kinematic modeling, mechanical design</p>
+    </div>
+
+    <div class="project">
+      <h3>Data Analysis & Visualization (Python)</h3>
+      <p>Collected and analyzed engineering data to identify trends and anomalies. Automated calculations and generated visualizations for clear communication of insights, supporting decision-making in projects.</p>
+      <p><strong>Tools:</strong> Python, Pandas, Matplotlib</p>
+      <p><strong>Focus:</strong> Data analysis, visualization, automation</p>
+    </div>
+
+    <div class="project">
+      <h3>Mechanical Component Sizing (Excel & MATLAB)</h3>
+      <p>Calculated optimal component dimensions and performance metrics using MATLAB and Excel. Verified designs against stress and displacement limits, ensuring safety and functionality in mechanical systems.</p>
+      <p><strong>Tools:</strong> MATLAB, Excel</p>
+      <p><strong>Focus:</strong> Design calculations, engineering analysis</p>
+    </div>
+  </section>
+
+  <!-- Contact & Resume Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      <a href="mailto:ericmrls20@gmail.com"><i class="fas fa-envelope"></i> Email</a> | 
+      <a href="https://github.com/EricM63" target="_blank"><i class="fab fa-github"></i> GitHub</a> | 
+      <a href="www.linkedin.com/in/eric-morales-eng" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </p>
+
+    <!-- Resume Download Button -->
+    <a href="Eric_Morales_Resume.pdf" download class="button">Download My Resume</a>
+  </section>
+
 </body>
 </html>
