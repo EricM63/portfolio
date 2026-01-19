@@ -4,7 +4,7 @@ This repository contains my personal portfolio website, showcasing my projects, 
 
 ## Live Site
 Deployed using GitHub Pages.
-
+https://ericm63.github.io/portfolio/
 ## About Me
 I am an engineer and programmer with experience in MATLAB, Python, data analysis, and engineering design. My goal is to build software and engineering solutions that solve real problems.
 
