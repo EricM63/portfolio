@@ -5,114 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eric Morales – Portfolio</title>
 
-  <!-- Font Awesome CDN for icons -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Body & General */
+    /* Base styles */
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f4f8;
+      line-height: 1.6;
+      background-color: #f4f7f9;
       color: #333;
     }
-    header, section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    h1, h2, h3 {
-      color: #ff4500;
+
+    a {
+      text-decoration: none;
     }
 
-    /* Gradient Hero Section */
+    h1, h2, h3 {
+      margin: 0 0 15px 0;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #1e90ff;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
     header {
       background: linear-gradient(135deg, #1e90ff, #00bfff);
       color: white;
-      padding: 60px 20px;
-      border-radius: 10px;
       text-align: center;
+      padding: 80px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+    header p {
+      max-width: 700px;
+      margin: 10px auto;
+      font-size: 1.1em;
     }
 
-    /* Button Styling */
-    a.button {
-      display: inline-block;
-      background-color: #1e90ff;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-      font-size: 16px;
-      transition: all 0.3s ease;
+    /* Sections */
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
     }
-    a.button:hover {
-      background-color: #0d6efd;
-      transform: scale(1.05);
+    #skills p, #contact p {
+      margin: 8px 0;
     }
 
-    /* Project Cards */
+    /* Projects */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
     .project {
-      background-color: #ffffff;
+      background: #fff;
       padding: 25px;
-      margin-bottom: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .project:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
-
     .project img {
       width: 100%;
-      border-radius: 5px;
-      margin: 10px 0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .project img:hover {
       transform: scale(1.03);
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
-    /* Responsive Design */
+    /* Buttons */
+    .button {
+      display: inline-block;
+      background-color: #1e90ff;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-top: 15px;
+    }
+    .button:hover {
+      background-color: #0d6efd;
+      transform: scale(1.05);
+    }
+
+    /* Contact icons */
+    .contact-icons a {
+      margin-right: 20px;
+      font-size: 1.2em;
+      color: #1e90ff;
+      transition: 0.3s;
+    }
+    .contact-icons a:hover {
+      color: #0d6efd;
+    }
+
+    /* Responsive adjustments */
     @media screen and (max-width: 768px) {
-      body {
-        font-size: 16px;
-        padding: 0 10px;
+      header h1 {
+        font-size: 2.2em;
       }
-      header, section {
-        padding: 30px 10px;
-      }
-      a.button {
-        width: 100%;
-        text-align: center;
+      .projects-container {
+        grid-template-columns: 1fr;
       }
     }
 
-    /* Smooth Scroll */
     html {
       scroll-behavior: smooth;
-    }
-
-    /* Navigation */
-    nav {
-      text-align:center;
-      padding:15px;
-      background:#1e90ff;
-    }
-    nav a {
-      color:white;
-      margin:0 15px;
-      text-decoration:none;
-      font-weight:bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -125,68 +159,63 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero / About Section -->
+  <!-- Hero Section -->
   <header>
     <h1>Eric Morales</h1>
-    <p><strong>Graduate Engineer | Engineering & programming | Technical Problem Solving</strong></p>
-    <p>I am an engineer with experience in MATLAB, Python, and engineering analysis, focused on turning complex technical problems into clear, repeatable solutions. My work includes numerical analysis, mechanical system modeling, and data-driven validation of engineering designs.</p>
-    <p><em>Seeking entry-level engineering or technical roles.</em></p>
+    <p><strong>Engineering Student | MATLAB & Python | Technical Problem Solving</strong></p>
+    <p>I turn complex technical problems into clear, repeatable solutions through engineering analysis, data visualization, and mechanical design.</p>
   </header>
 
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <p><strong>Programming & Analysis:</strong> MATLAB (numerical methods, plotting, symbolic math), Python (data analysis, scripting), SQL (basic querying)</p>
-    <p><strong>Engineering Tools:</strong> AutoCAD, Fusion 360, Excel (engineering plots & analysis)</p>
-    <p><strong>Web:</strong> HTML, CSS</p>
+    <p><strong>Programming & Analysis:</strong> MATLAB, Python, SQL, Data Analysis</p>
+    <p><strong>Engineering Tools:</strong> AutoCAD, Fusion 360, Excel</p>
+    <p><strong>Web Development:</strong> HTML5, CSS3</p>
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3>Beam Stress Analysis (MATLAB)</h3>
+        <!-- Optional: <img src="beam_plot.png" alt="Beam Stress"> -->
+        <p>Analyzed bending stress in hollow circular beams using MATLAB, validated results analytically, and visualized stress distributions for design verification.</p>
+        <p><strong>Tools:</strong> MATLAB</p>
+      </div>
 
-    <div class="project">
-      <h3>Beam Stress Analysis (MATLAB)</h3>
-      <!-- Optional: Add image -->
-      <!-- <img src="beam_plot.png" alt="Beam Stress Plot"> -->
-      <p>Analyzed bending stress in hollow circular beams using mechanics of materials formulas and MATLAB. Generated stress distributions and validated results analytically, providing clear plots for design verification.</p>
-      <p><strong>Tools:</strong> MATLAB</p>
-      <p><strong>Focus:</strong> Mechanical stress analysis, numerical validation</p>
-    </div>
+      <div class="project">
+        <h3>Cam and Follower Mechanism</h3>
+        <p>Designed and analyzed a cam & oscillating follower mechanism, ensuring accurate mechanical performance through kinematic analysis.</p>
+        <p><strong>Tools:</strong> Fusion 360</p>
+      </div>
 
-    <div class="project">
-      <h3>Cam and Follower Mechanism Design</h3>
-      <p>Designed and analyzed a cam and oscillating follower mechanism. Modeled motion constraints and verified displacement behavior through geometric and kinematic analysis to ensure accurate mechanical performance.</p>
-      <p><strong>Tools:</strong> Fusion 360, Engineering Analysis</p>
-      <p><strong>Focus:</strong> Kinematic modeling, mechanical design</p>
-    </div>
+      <div class="project">
+        <h3>Data Analysis & Visualization (Python)</h3>
+        <p>Collected and analyzed engineering data, automated calculations, and generated visualizations to support project decision-making.</p>
+        <p><strong>Tools:</strong> Python, Pandas, Matplotlib</p>
+      </div>
 
-    <div class="project">
-      <h3>Data Analysis & Visualization (Python)</h3>
-      <p>Collected and analyzed engineering data to identify trends and anomalies. Automated calculations and generated visualizations for clear communication of insights, supporting decision-making in projects.</p>
-      <p><strong>Tools:</strong> Python, Pandas, Matplotlib</p>
-      <p><strong>Focus:</strong> Data analysis, visualization, automation</p>
-    </div>
-
-    <div class="project">
-      <h3>Mechanical Component Sizing (Excel & MATLAB)</h3>
-      <p>Calculated optimal component dimensions and performance metrics using MATLAB and Excel. Verified designs against stress and displacement limits, ensuring safety and functionality in mechanical systems.</p>
-      <p><strong>Tools:</strong> MATLAB, Excel</p>
-      <p><strong>Focus:</strong> Design calculations, engineering analysis</p>
+      <div class="project">
+        <h3>Mechanical Component Sizing</h3>
+        <p>Calculated optimal component dimensions using MATLAB & Excel and verified designs against stress and displacement limits.</p>
+        <p><strong>Tools:</strong> MATLAB, Excel</p>
+      </div>
     </div>
   </section>
 
-  <!-- Contact & Resume Section -->
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>
-      <a href="mailto:ericmrls20@gmail.com"><i class="fas fa-envelope"></i> Email</a> | 
-      <a href="https://github.com/EricM63" target="_blank"><i class="fab fa-github"></i> GitHub</a> | 
-      <a href="http://www.linkedin.com/in/eric-morales-eng" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <p class="contact-icons">
+      <a href="ericmrls20@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/EricM63" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="http://www.linkedin.com/in/eric-morales-eng" target="_blank"><i class="fab fa-linkedin"></i></a>
     </p>
 
-    <!-- Resume Download Button -->
- <a href="Eric_Morales_Resume.pdf" download class="button">Download My Resume</a>
+    <!-- Resume Button -->
+    <a href="Eric_Morales_Resume.pdf" download class="button">Download My Resume</a>
   </section>
 
 </body>
