@@ -29,4 +29,3 @@ This site includes links to my projects. Each project has:
 - Email: ericmrls20@gmail.com
 - GitHub: https://github.com/EricM63
 - LinkedIn: www.linkedin.com/in/eric-morales-eng
-- Resume: Download PDF
