@@ -21,14 +21,8 @@
       background-color: #f4f7f9;
       color: #333;
     }
-
-    a {
-      text-decoration: none;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 15px 0;
-    }
+    a { text-decoration: none; }
+    h1, h2, h3 { margin: 0 0 15px 0; }
 
     /* Navigation */
     nav {
@@ -46,9 +40,7 @@
       font-weight: 600;
       transition: 0.3s;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
 
     /* Hero Section */
     header {
@@ -59,12 +51,12 @@
     }
     header h1 {
       font-size: 3em;
-      color: white;      /* name is white */
-      font-weight: 700;  /* bold */
+      color: white;
+      font-weight: 700;
       margin-bottom: 15px;
     }
     header p {
-      font-weight: 700;  /* bold description */
+      font-weight: 700;
       color: white;
       max-width: 700px;
       margin: 10px auto;
@@ -77,9 +69,12 @@
       margin: auto;
       padding: 60px 20px;
     }
-    #skills p, #contact p {
-      margin: 8px 0;
+    section h2 {
+      color: #1e90ff;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
+    #skills p, #contact p { margin: 8px 0; }
 
     /* Projects */
     .projects-container {
@@ -102,6 +97,7 @@
       width: 100%;
       border-radius: 8px;
       margin-bottom: 10px;
+      cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .project img:hover {
@@ -132,22 +128,32 @@
       color: #1e90ff;
       transition: 0.3s;
     }
-    .contact-icons a:hover {
-      color: #0d6efd;
-    }
+    .contact-icons a:hover { color: #0d6efd; }
 
     /* Responsive adjustments */
     @media screen and (max-width: 768px) {
-      header h1 {
-        font-size: 2.2em;
-      }
-      .projects-container {
-        grid-template-columns: 1fr;
-      }
+      header h1 { font-size: 2.2em; }
+      .projects-container { grid-template-columns: 1fr; }
     }
 
-    html {
-      scroll-behavior: smooth;
+    html { scroll-behavior: smooth; }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
   </style>
 </head>
@@ -163,14 +169,14 @@
   <!-- Hero Section -->
   <header>
     <h1>Eric Morales</h1>
-    <p><strong>Graduate Engineer| Engineer & Programming | Technical Problem Solving</strong></p>
+    <p><strong>Graduate Engineer | Engineer & Programming | Technical Problem Solving</strong></p>
     <p>I turn complex technical problems into clear, repeatable solutions through engineering analysis, data visualization, and mechanical design.</p>
   </header>
 
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <p><strong>Programming & Analysis:</strong> MATLAB, Python, SQL, Data Analysis</p>
+    <p><strong>Programming & Analysis:</strong> MATLAB, Python, Data Analysis</p>
     <p><strong>Engineering Tools:</strong> AutoCAD, Fusion 360, Excel</p>
     <p><strong>Web Development:</strong> HTML5, CSS3</p>
   </section>
@@ -181,37 +187,42 @@
     <div class="projects-container">
       <div class="project">
         <h3>Beam Stress Analysis</h3>
+        <img src="images/beam_stress.png" alt="Beam Stress Analysis">
         <p>Analyzed bending stress in hollow circular beams using MATLAB, validated results analytically, and visualized stress distributions for design verification.</p>
         <p><strong>Tools:</strong> MATLAB</p>
       </div>
 
       <div class="project">
         <h3>Cam and Follower Mechanism</h3>
+        <img src="images/cam_mechanism.png" alt="Cam and Follower Mechanism">
         <p>Designed and analyzed a cam & oscillating follower mechanism, ensuring accurate mechanical performance through kinematic analysis.</p>
         <p><strong>Tools:</strong> Fusion 360</p>
       </div>
 
       <div class="project">
         <h3>Data Analysis & Visualization</h3>
+        <img src="images/data_analysis.png" alt="Data Analysis & Visualization">
         <p>Collected and analyzed engineering data, automated calculations, and generated visualizations to support project decision-making.</p>
         <p><strong>Tools:</strong> Python, Pandas, Matplotlib</p>
       </div>
 
       <div class="project">
         <h3>Ring Doorbell System</h3>
+        <img src="images/ring_doorbell.png" alt="Ring Doorbell System">
         <p>Designed a UI in Python to integrate real-time data import using Raspberry Pi. Built an algorithm for user-friendly program usage through a web-based interface.</p>
         <p><strong>Tools:</strong> Python, Raspberry Pi, Web Interface</p>
       </div>
 
       <div class="project">
         <h3>Mechanical Component Sizing</h3>
+        <img src="images/mechanical_component.png" alt="Mechanical Component Sizing">
         <p>Calculated optimal component dimensions using MATLAB & Excel and verified designs against stress and displacement limits.</p>
         <p><strong>Tools:</strong> MATLAB, Excel</p>
       </div>
 
-      <!-- New Project: Water for Headwaters -->
       <div class="project">
         <h3>Water for Headwaters</h3>
+        <img src="images/water_station.png" alt="Water for Headwaters">
         <p>Designed an off-grid system for a wildlife sanctuary using Fusion 360. Collaborated with clients to align designs with functional objectives. Conducted trials to gain accurate measurements of volts, amps, and GPH to verify calculations. Used FEA in Fusion 360 to analyze strains and stresses, ensuring the station could support two large solar panels and one bulk battery without plastic deformation.</p>
         <p><strong>Tools:</strong> Fusion 360, FEA, Experimental Measurements</p>
       </div>
@@ -226,10 +237,34 @@
       <a href="https://github.com/EricM63" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
     </p>
-
-    <!-- Resume Button -->
     <a href="Eric_Morales_Resume.pdf" download class="button">Download My Resume</a>
   </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Project Screenshot">
+  </div>
+
+  <!-- Lightbox Script -->
+  <script>
+    const projectImages = document.querySelectorAll('.project img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    projectImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+      lightboxImg.alt = '';
+    }
+  </script>
 
 </body>
 </html>
