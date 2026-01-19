@@ -112,36 +112,43 @@ h2 {
   transform: translateY(0);
 }
 
-.project-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+/* Carousel */
+.project-images.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 
-.project-images img {
+.project-images.carousel .slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.project-images.carousel .slides img,
+.project-images.carousel .slides video {
   width: 100%;
+  flex-shrink: 0;
   border-radius: 10px;
+}
+
+.project-images.carousel .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  user-select: none;
+  border-radius: 5px;
 }
 
-.project-images img:hover {
-  transform: scale(1.05);
-}
+.project-images.carousel .arrow.left { left: 10px; }
+.project-images.carousel .arrow.right { right: 10px; }
 
-.button {
-  display: inline-block;
-  background: var(--accent);
-  color: white;
-  padding: 14px 28px;
-  border-radius: 6px;
-  margin-top: 20px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-/* MODAL */
+/* Modal */
 .modal {
   position: fixed;
   inset: 0;
@@ -161,9 +168,21 @@ h2 {
   display: flex;
 }
 
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 @media(max-width: 768px) {
   header h1 { font-size: 2.2em; }
-  .project-images { grid-template-columns: 1fr; }
+  .project-images.carousel .slides img,
+  .project-images.carousel .slides video { width: 100%; }
 }
 </style>
 </head>
@@ -203,30 +222,47 @@ h2 {
 
     <div class="project mechanical">
       <h3>Water for Headwaters</h3>
-
-      <div class="project-images">
-        <img src="images/Screenshot_2025-05-22_111847.png">
-        <img src="images/Screenshot 2025-05-22 111942.png">
-        <img src="images/Screenshot 2025-05-22 111917.png">
+      <div class="project-images carousel">
+        <div class="slides">
+          <img src="images/Screenshot_2025-05-22_111847.png" alt="Image 1">
+          <video controls>
+            <source src="videos/myvideo.mp4" type="video/mp4">
+          </video>
+          <img src="images/Screenshot 2025-05-22_111917.png" alt="Image 2">
+        </div>
+        <div class="arrow left" onclick="prevSlide(this)">&#10094;</div>
+        <div class="arrow right" onclick="nextSlide(this)">&#10095;</div>
       </div>
-
       <p>Designed an off-grid water system using Fusion 360. Conducted real-world electrical and flow testing and validated structural integrity using FEA.</p>
       <p><strong>Tools:</strong> Fusion 360, FEA, Hands on design</p>
     </div>
 
     <div class="project mechanical">
       <h3>Cam & Follower Mechanism</h3>
-
-       <div class="project-images">
-        <img src="images/Screenshot 2026-01-19 132313.png">
+      <div class="project-images carousel">
+        <div class="slides">
+          <img src="images/Screenshot 2026-01-19 132313.png" alt="Cam Mechanism">
+          <video controls>
+            <source src="videos/camvideo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="arrow left" onclick="prevSlide(this)">&#10094;</div>
+        <div class="arrow right" onclick="nextSlide(this)">&#10095;</div>
       </div>
-
       <p>Kinematic design and analysis of a cam-driven oscillating follower.</p>
       <p><strong>Tools:</strong> Fusion 360, MATLAB</p>
     </div>
 
     <div class="project software">
       <h3>Ring Doorbell System</h3>
+      <div class="project-images carousel">
+        <div class="slides">
+          <img src="images/ring1.png" alt="Ring 1">
+          <img src="images/ring2.png" alt="Ring 2">
+        </div>
+        <div class="arrow left" onclick="prevSlide(this)">&#10094;</div>
+        <div class="arrow right" onclick="nextSlide(this)">&#10095;</div>
+      </div>
       <p>Created a copy of the ring doorbell. Python-based UI integrating Raspberry Pi real-time data with a web interface.</p>
       <p><strong>Tools:</strong> Python, Thonny, Hands on design</p>
     </div>
@@ -255,7 +291,6 @@ h2 {
     Download Resume
   </a>
 </section>
-
 
 <div class="modal" onclick="this.classList.remove('active')">
   <img>
@@ -288,8 +323,26 @@ function filterProjects(type) {
     p.style.display = (type === 'all' || p.classList.contains(type)) ? 'block' : 'none';
   });
 }
+
+/* Carousel functionality */
+function nextSlide(carousel) {
+  const slides = carousel.querySelector('.slides');
+  const total = slides.children.length;
+  let index = slides.getAttribute('data-index') ? parseInt(slides.getAttribute('data-index')) : 0;
+  index = (index + 1) % total;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+  slides.setAttribute('data-index', index);
+}
+
+function prevSlide(carousel) {
+  const slides = carousel.querySelector('.slides');
+  const total = slides.children.length;
+  let index = slides.getAttribute('data-index') ? parseInt(slides.getAttribute('data-index')) : 0;
+  index = (index - 1 + total) % total;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+  slides.setAttribute('data-index', index);
+}
 </script>
 
 </body>
 </html>
-
